@@ -35,7 +35,9 @@
             to_port: 80
             cidr_ip: 0.0.0.0/0
       register: vproELBSG_out
-      debug: vproELBSG_out
+
+    - debug:
+        var: vproELBSG_out
 
     - name: Create Securiry Group for Vprofile Stack
       ec2_group:
