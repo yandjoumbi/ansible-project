@@ -1,6 +1,6 @@
 ---
 - name: Install Package
-  hosts: [websrvgrp]
+  hosts: {{ hostvars['websrvgrp'].ansible_host }}
   gather_facts: no
   tasks:
     - name: Install npm
