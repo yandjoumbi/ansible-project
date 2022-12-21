@@ -1,0 +1,7 @@
+---
+- name: Install Package
+  hosts: websrvgrp
+  gather_facts: no
+  tasks:
+    - name: Install npm
+      apt: pkg=npm state=installed update_cache=true
