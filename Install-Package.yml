@@ -1,6 +1,6 @@
 ---
 - name: Install Package
-  hosts: websrvgrp
+  hosts: [websrvgrp]
   gather_facts: no
   tasks:
     - name: Install npm
