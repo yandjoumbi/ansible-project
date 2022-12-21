@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Show connection test
+      delegate_to: group1
+      debug:
+        msg: "Connect from 'websrvgrp' node to {{ inventory_hostname }}"
+      #when: "'group2' in group_names"
