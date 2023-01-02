@@ -179,7 +179,7 @@
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
-        image: "{{mysql_ami}}"
+        image: "{{redis_ami}}"
         wait: yes
         wait_timeout: 300
         instance_tags:

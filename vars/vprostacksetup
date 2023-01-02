@@ -3,4 +3,4 @@ tomcat_ami: ami-0283a57753b18025b
 memcache_ami: ami-0283a57753b18025b
 rmq_ami: ami-0283a57753b18025b
 mysql_ami: ami-0283a57753b18025b
-
+redis_ami: ami-0283a57753b18025b

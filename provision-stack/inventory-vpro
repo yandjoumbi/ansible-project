@@ -4,6 +4,7 @@ app01 ansible_host=172.20.4.218
 rmq01 ansible_host=172.20.4.25
 mc01 ansible_host=172.20.4.70
 db01 ansible_host=172.20.4.207
+rd01 ansible_host=
 cntl ansible_host=172.31.24.37 ansible_connection=local
 
 [websrvgrp]
@@ -21,6 +22,9 @@ mc01
 [dbsrvgrp]
 db01
 
+[rdsrvgrp]
+rd01
+
 [control]
 cntl
 
@@ -30,6 +34,7 @@ appsrvgrp
 rmqsrvgrp
 mcsrvgrp
 dbsrvgrp
+rdsrvgrp
 
 [stack_inst:vars]
 ansible_user=ubuntu

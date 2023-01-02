@@ -1,0 +1,38 @@
+---
+- name: Install Memcache, Start & enable SVC
+  hosts: rdsrvgrp
+  gather_facts: no
+  tasks:
+    - name: Install redis
+      apt:
+        name: redis
+        state: present
+        update_cache: yes
+        cache_valid_time: 86400
+      tags:
+        - package
+
+    - name: Start & Enable redis
+      service:
+        name: redis
+        state: started
+        enabled: yes
+      tags:
+        - svc
+
+    - name: Enable remote login to redis
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^-l '
+        line: '-l 0.0.0.0'
+        backup: yes
+      notify:
+        - Restart redis
+      tags:
+        - conf
+
+  handlers:
+    - name: Restart redis
+      service:
+        name: redis
+        state: restarted
