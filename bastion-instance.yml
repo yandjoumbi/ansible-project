@@ -67,6 +67,6 @@
 
     - debug:
         with_items:
-          - {{BastionSG_out.group_id}}
+          - {{ BastionSG_out.group_id }}
 
 
