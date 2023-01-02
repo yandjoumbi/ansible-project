@@ -66,6 +66,7 @@
           BastionSGid: {{BastionSG_out.group_id}}
 
     - debug:
-        var: {{BastionSG_out.group_id}}
+        with_items:
+          - {{BastionSG_out.group_id}}
 
 
